@@ -347,7 +347,7 @@
   .hero-cta-wrap { display: flex; align-items: center; justify-content: flex-start; gap: 1rem; flex-wrap: wrap; }
 
   /* Right column: rounded image-card carousel */
-  .hero-card { position: relative; width: 100%; aspect-ratio: 4 / 5; border-radius: 26px; overflow: hidden; background: var(--cream-dark); box-shadow: 0 30px 60px -28px rgba(42,34,24,0.45), 0 4px 16px -8px rgba(42,34,24,0.22); }
+  .hero-card { position: relative; width: 100%; aspect-ratio: 4 / 5; border-radius: 26px; overflow: hidden; background: var(--cream-dark); box-shadow: 0 30px 60px -28px rgba(42,34,24,0.45), 0 4px 16px -8px rgba(42,34,24,0.22); touch-action: pan-y; }
   /* caption scrim removed: the slide image stays clean top-to-bottom (no bottom-darkening band). Caption legibility now comes solely from the soft dark-halo text-shadows on the label + name below, which lift the light text on both the light (Heart) and dark (Bordeaux/Blue) slides. */
   .hero-card-slide { position: absolute; inset: 0; z-index: 0; opacity: 0; transition: opacity 0.7s ease; }
   .hero-card-slide.active { opacity: 1; }
@@ -1725,6 +1725,27 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   dots.forEach(dot => {
     dot.addEventListener('click', () => show(parseInt(dot.dataset.slide, 10)));
   });
+
+  // Horizontal swipe (mobile): reuses show() and `current`, no second source of truth.
+  // CSS touch-action: pan-y lets the browser own vertical page scroll; horizontal
+  // gestures reach us. No preventDefault, no touchmove work, so vertical scroll and
+  // taps stay untouched. Listeners are passive.
+  const SWIPE_MIN = 40;     // px of horizontal travel before it counts as a swipe
+  const SWIPE_RATIO = 1.5;  // horizontal must clearly beat vertical (rejects diagonal scroll)
+  let touchStartX = 0, touchStartY = 0;
+  card.addEventListener('touchstart', (e) => {
+    const t = e.changedTouches[0];
+    touchStartX = t.clientX;
+    touchStartY = t.clientY;
+  }, { passive: true });
+  card.addEventListener('touchend', (e) => {
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStartX;
+    const dy = t.clientY - touchStartY;
+    if (Math.abs(dx) > SWIPE_MIN && Math.abs(dx) > Math.abs(dy) * SWIPE_RATIO) {
+      show(dx < 0 ? current + 1 : current - 1);  // left swipe advances, right goes back (matches arrows)
+    }
+  }, { passive: true });
 
   show(0);
 })();
