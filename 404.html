@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stran ne obstaja · SOMI Nail Studio</title>
+<meta name="description" content="Iskane strani ni. This page does not exist. Nazaj na sominail.si.">
+<meta name="robots" content="noindex">
+<meta name="language" content="Slovenian">
+<meta name="author" content="SOMI Nail Studio">
+<meta name="theme-color" content="#F0E8D8">
+
+<!-- Fonts self-hosted below via @font-face (Cormorant Garamond + Jost, SIL OFL 1.1). No third-party requests. -->
+<style>
+  /* Self-hosted fonts (Cormorant Garamond + Jost, SIL OFL 1.1; license in fonts/OFL.txt).
+     Normal weight only; the 404 signpost uses no italic. latin-ext carries Slovenian diacritics. */
+  @font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 300 500;
+    font-display: swap;
+    src: url(fonts/cormorant-garamond-normal-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Cormorant Garamond';
+    font-style: normal;
+    font-weight: 300 500;
+    font-display: swap;
+    src: url(fonts/cormorant-garamond-normal-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 300 500;
+    font-display: swap;
+    src: url(fonts/jost-normal-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 300 500;
+    font-display: swap;
+    src: url(fonts/jost-normal-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  :root {
+    --cream: #F0E8D8;
+    --gold: #C9A96E;
+    --dark: #2A2218;
+    --subtext: #665B4D;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  /* Wordmark: SOMI in the display serif, NAIL STUDIO tracked beneath, mirroring the logo lockup.
+     text-indent offsets the trailing letter-spacing so each line stays optically centred. */
+  .logo { display: inline-flex; flex-direction: column; align-items: center; gap: 0.4rem; text-decoration: none; color: var(--dark); }
+  .logo-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 2rem + 1.6vw, 3rem);
+    letter-spacing: 0.22em;
+    text-indent: 0.22em;
+    line-height: 1;
+  }
+  .logo-sub {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 0.62rem;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    text-transform: uppercase;
+    color: var(--subtext);
+  }
+
+  .eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 0.7rem;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .msg {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.4rem);
+    line-height: 1.2;
+    letter-spacing: 0.004em;
+    color: var(--dark);
+    text-wrap: balance;
+  }
+
+  .msg-en {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--subtext);
+    margin-top: -0.7rem;
+  }
+
+  .rule { width: 40px; height: 1px; background: var(--gold); border: 0; }
+
+  .home-link {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--subtext);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.4);
+    padding-bottom: 3px;
+    transition: color 0.2s;
+  }
+  .home-link:hover { color: var(--gold); }
+
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-link { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="logo" aria-label="SOMI Nail Studio, nazaj na domačo stran">
+  <span class="logo-mark">SOMI</span>
+  <span class="logo-sub">Nail Studio</span>
+</a>
+
+<p class="eyebrow">404</p>
+
+<h1 class="msg" lang="sl">Ta stran ne obstaja.</h1>
+<p class="msg-en" lang="en">This page does not exist.</p>
+
+<hr class="rule">
+
+<a class="home-link" href="https://sominail.si/">sominail.si</a>
+
+</body>
+</html>
